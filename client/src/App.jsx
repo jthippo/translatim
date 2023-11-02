@@ -14,7 +14,7 @@ function App() {
   // call the API to get translation
   async function handleTranslate(event) {
     event.preventDefault();
-    const API = `https://api.render.com/deploy/srv-cl1nlmjmgg9c73a437ug?key=fCmC74ZWEXs/translate?word=${word}&from=${from}&to=${to}`;
+    const API = `http://localhost:8080/translate?word=${word}&from=${from}&to=${to}`;
     const res = await axios.get(API);
     setTranslation(res.data);
   }
