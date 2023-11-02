@@ -1,0 +1,55 @@
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.bigboy {
+  display: flex;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+}
+
+.input,
+.output {
+  height: 20vh;
+  width: 30vw;
+  font-size: 24px;
+  overflow: hidden;
+}
+
+.input {
+  padding: none;
+  resize: none;
+}
+
+.output {
+  border: 2px inset;
+}
+
+select {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+button {
+  background-color: #008cba;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: #4caf50;
+  color: white;
+}
