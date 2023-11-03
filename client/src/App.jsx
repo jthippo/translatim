@@ -9,14 +9,16 @@ function App() {
   const [word, setWord] = useState("");
   // translation is object because that's what's returned by server
   const [translation, setTranslation] = useState({});
-  const [accuracy, setAccuracy] = useState(0);
+  // image is string because it's a URL
+  const [image, setImage] = useState("");
 
   // call the API to get translation
   async function handleTranslate(event) {
     event.preventDefault();
-    const API = `http://localhost:8080/translate?word=${word}&from=${from}&to=${to}`;
+    const API = `https://translatim-oqqa.onrender.com/translate?word=${word}&from=${from}&to=${to}`;
     const res = await axios.get(API);
     setTranslation(res.data);
+    setImage(res.data.image);
   }
 
   return (
@@ -38,7 +40,15 @@ function App() {
               placeholder="Enter text"
               onChange={(event) => setWord(event.target.value)}
             />
-            <button>Translate</button>
+            <button>Translate & generate image of dubious relevance</button>
+            <div className="titletext">
+              <h1>whyTranslator?</h1>
+              <p>
+                Translate text between a shockingly small number of languages
+                and generate an image of dubious relevance.
+              </p>
+              <p>It's what the internet has always needed!</p>
+            </div>
           </div>
 
           <div className="container">
@@ -52,6 +62,7 @@ function App() {
               <option value="tr">Turkish</option>
             </select>
             <div className="output">{translation.translation}</div>
+            <img src={image} />
           </div>
         </div>
       </form>

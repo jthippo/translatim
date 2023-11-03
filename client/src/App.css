@@ -2,8 +2,13 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+body {
+  background-color: #ffa300;
+}
+
 .bigboy {
   display: flex;
+  justify-content: center;
 }
 
 .container {
@@ -27,6 +32,7 @@
 
 .output {
   border: 2px inset;
+  background-color: white;
 }
 
 select {
@@ -52,4 +58,15 @@ button {
 button:hover {
   background-color: #4caf50;
   color: white;
+}
+
+.titletext {
+  width: 30vw;
+  overflow-wrap: break-word;
+}
+
+img {
+  max-width: 30vw;
+  object-fit: cover;
+  margin-top: 1rem;
 }
